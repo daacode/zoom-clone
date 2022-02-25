@@ -160,7 +160,10 @@ form h2,
   justify-content: center;
 }
 
-
+.button_name {
+  font-size: 14px;
+  margin-top: 5px;
+}
 
 .control-bar > *:not(:first-child) {
   margin-left: 8px;

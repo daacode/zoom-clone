@@ -3,15 +3,20 @@ import { useAVToggle } from "@100mslive/react-sdk";
 import {
     selectIsConnectedToRoom,
     useHMSActions,
-    useHMSStore
+    useHMSStore,
+    selectPeers,
   } from "@100mslive/react-sdk";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMicrophoneSlash, faMicrophone, faVideo, faVideoSlash, 
-         faUserPlus, faArrowUpRightFromSquare,
+         faUserPlus, faArrowUpRightFromSquare, faMessage, faFaceSmile, faGear, faEllipsis
 } from "@fortawesome/free-solid-svg-icons";
 
 function Footer() {
+
+    const peers = useHMSStore(selectPeers);
+
+    const userCount = peers.length;
 
     const isConnected = useHMSStore(selectIsConnectedToRoom);
     const hmsActions = useHMSActions();
@@ -27,10 +32,10 @@ function Footer() {
             <div className="main_controls_section">
                 <div className="main_controls_button" onClick={toggleAudio}>
                 {isLocalAudioEnabled ? (
-                <><FontAwesomeIcon icon={faMicrophoneSlash} size="lg" /><span>UnMute</span></>
+                <><FontAwesomeIcon icon={faMicrophoneSlash} size="lg" /><span className="button_name">Mute</span></>
                 
                 ): (
-                <><FontAwesomeIcon icon={faMicrophone} size="lg" /><span>mute</span></>
+                <><FontAwesomeIcon icon={faMicrophone} size="lg" /><span className="button_name">Unmute</span></>
                 )}
                
                
@@ -38,9 +43,9 @@ function Footer() {
 
                 <div className="main_controls_button" onClick={toggleVideo}>
                 {isLocalVideoEnabled ? (
-                <><FontAwesomeIcon icon={faVideoSlash} size="lg" /><span>Stop Video</span></>
+                <><FontAwesomeIcon icon={faVideoSlash} size="lg" /><span className="button_name">Stop Video</span></>
                 ): (
-                <><FontAwesomeIcon icon={faVideo} size="lg" /><span>Start Video</span></>
+                <><FontAwesomeIcon icon={faVideo} size="lg" /><span className="button_name">Start Video</span></>
                 )}
                 </div>
 
@@ -48,28 +53,30 @@ function Footer() {
 
             <div className="main_controls_section">
                 <div className="main_controls_button">
-                    <FontAwesomeIcon icon={faUserPlus} size="lg" />
-                    <span>Participants</span>
+                    <div>
+                    <FontAwesomeIcon icon={faUserPlus} size="lg" /><>{userCount}</>
+                    </div>
+                    <span className="button_name">Participants</span>
                 </div>
                 <div className="main_controls_button">
-                    <FontAwesomeIcon icon={faArrowUpRightFromSquare}  size="lg" />
-                    <span>Share Screen</span>
+                    <FontAwesomeIcon icon={faArrowUpRightFromSquare}  size="lg" color="" />
+                    <span className="button_name">Share Screen</span>
                 </div>
                 <div className="main_controls_button">
-                    <FontAwesomeIcon icon={faUserPlus} />
-                    <span>Chat</span>
+                    <FontAwesomeIcon icon={faMessage} size="lg" />
+                    <span className="button_name">Chat</span>
                 </div>
                 <div className="main_controls_button">
-                    <FontAwesomeIcon icon={faUserPlus} />
-                    <span>Reactions</span>
+                    <FontAwesomeIcon icon={faFaceSmile} size="lg"/>
+                    <span className="button_name">Reactions</span>
                 </div>
                 <div className="main_controls_button">
-                    <FontAwesomeIcon icon={faUserPlus} />
-                    <span>Settings</span>
+                    <FontAwesomeIcon icon={faGear} size="lg"/>
+                    <span className="button_name">Settings</span>
                 </div>
                 <div className="main_controls_button">
-                    <FontAwesomeIcon icon={faUserPlus} />
-                    <span>More</span>
+                    <FontAwesomeIcon icon={faEllipsis} size="lg" />
+                    <span className="button_name">More</span>
                 </div>
             </div>
 
@@ -86,24 +93,6 @@ function Footer() {
                     )}
              </div>
             </div>
-
-            
-
-            {/* <button className="btn-control" onClick={toggleAudio}>
-                {isLocalAudioEnabled ? "Mute" : "Unmute"}
-            </button>
-            <button className="btn-control" onClick={toggleVideo}>
-                {isLocalVideoEnabled ? "Hide" : "Unhide"}
-            </button>
-            {isConnected && (
-                <button
-                id="leave-btn"
-                class="btn-danger"
-                onClick={() => hmsActions.leave()}
-                >
-                Leave Room
-                </button>
-            )} */}
             
         </div>
         
