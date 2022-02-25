@@ -7,6 +7,10 @@ import {
 import './App.css';
 import './SignIn';
 import SignIn from './SignIn';
+import Conference from './Conference';
+import Footer from './Footer';
+
+
 
 function App() {
 
@@ -23,7 +27,14 @@ function App() {
 
   return (
     <div className="App">
-      <SignIn />
+      {isConnected ? (
+        <>
+          <Conference />
+          <Footer />
+        </>
+      ):(
+        <SignIn />
+      )}
     </div>
   );
 

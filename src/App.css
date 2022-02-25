@@ -5,10 +5,11 @@
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  background-color: #263238;
-  color: white;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 h1,
@@ -25,23 +26,25 @@ header {
   align-items: center;
   justify-content: space-between;
 }
-
+.meeting-title {
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 60px;
+}
 form {
   max-width: 450px;
-  margin: 30px auto;
+  margin: 15rem auto;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
   border-radius: 8px;
   padding: 20px;
 }
 
 input {
-  display: block;
   width: 100%;
+  border: 1px thin rgb(105, 105, 105) transparent;
   border-radius: 8px;
-  border: 2px solid transparent;
   height: 34px;
   padding: 5px;
-  background: #37474f;
   color: inherit;
   font-family: inherit;
 }
@@ -54,14 +57,16 @@ input::placeholder {
   margin-bottom: 20px;
 }
 
-.btn-primary {
+.btn-signin {
+  width: 100%;
+  height: 34px;
   border: 1px solid transparent;
-  border-radius: 4px;
+  border-radius: 8px;
   padding: 6px 14px;
-  background-color: #1565c0;
+  background-color: #0d72ed;
   color: white;
   font-family: inherit;
-  font-size: 14px;
+  font-size: 16px;
   cursor: pointer;
 }
 
@@ -81,10 +86,17 @@ form h2,
   cursor: pointer;
 }
 
+.room-section{
+  background-color: rgb(37, 37, 37);
+  width: 100%;
+  height: auto;
+}
 .conference-section {
   padding: 20px 30px;
-  max-width: 960px;
+  max-width:1200px;
+  height: 700px;
   margin: 0 auto;
+  color: white;
 }
 
 .conference-section h2 {
@@ -102,9 +114,8 @@ form h2,
 }
 
 .peer-video {
-  height: 250px;
-  width: 250px;
-  border-radius: 40%;
+  height: 400px;
+  width: 500px;
   object-fit: cover;
   margin-bottom: 10px;
 }
@@ -122,15 +133,34 @@ form h2,
   padding: 10px;
 }
 
-.control-bar {
+
+.main_control {
   display: flex;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  padding: 15px;
-  justify-content: center;
-  z-index: 10;
+  flex-direction: row;
+  max-width:100%;
+  height: 90px;
+  background-color: #1C1E20;
+  color: white;
+  padding: 10px;
+  justify-content: space-between
 }
+
+.main_controls_section {
+  flex-direction: row;
+  display: flex;
+}
+
+.main_controls_button {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  padding: 3px 10px;
+  min-width: 80px;
+  align-items: center;
+  justify-content: center;
+}
+
+
 
 .control-bar > *:not(:first-child) {
   margin-left: 8px;

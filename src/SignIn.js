@@ -27,7 +27,7 @@ function SignIn() {
 
     return (
         <form onSubmit={handleSubmit}>
-      <h2>Join Room</h2>
+      <h2 className="meeting-title">Join Meeting</h2>
       <div className="input-container">
         <input
           required
@@ -50,7 +50,7 @@ function SignIn() {
           placeholder="Auth token"
         />
       </div>
-      <button className="btn-primary">Join</button>
+      <button className="btn-signin">Join</button>
     </form>
     )
 }
