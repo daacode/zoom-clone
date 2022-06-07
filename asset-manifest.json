@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/zoom-clone/static/css/main.8ac1a549.css",
+    "main.js": "/zoom-clone/static/js/main.a2b9ab02.js",
+    "static/js/787.f1cb8339.chunk.js": "/zoom-clone/static/js/787.f1cb8339.chunk.js",
+    "index.html": "/zoom-clone/index.html",
+    "main.8ac1a549.css.map": "/zoom-clone/static/css/main.8ac1a549.css.map",
+    "main.a2b9ab02.js.map": "/zoom-clone/static/js/main.a2b9ab02.js.map",
+    "787.f1cb8339.chunk.js.map": "/zoom-clone/static/js/787.f1cb8339.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8ac1a549.css",
+    "static/js/main.a2b9ab02.js"
+  ]
+}
