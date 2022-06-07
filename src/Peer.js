@@ -1,6 +1,6 @@
 import { useVideo } from "@100mslive/react-sdk";
 
-function Peer({peer}) {
+function Peer({ peer }) {
     const { videoRef } = useVideo({
         trackId: peer.videoTrack
       });

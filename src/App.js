@@ -5,7 +5,6 @@ import {
   useHMSStore
 } from "@100mslive/react-sdk";
 import './App.css';
-import './SignIn';
 import SignIn from './SignIn';
 import Conference from './Conference';
 import Footer from './Footer';

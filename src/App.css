@@ -111,6 +111,7 @@ form h2,
   grid-template-columns: repeat(3, minmax(min-content, 1fr));
   place-items: center;
   grid-gap: 10px;
+  margin-top: 70px;
 }
 
 .peer-video {
