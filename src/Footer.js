@@ -32,21 +32,19 @@ function Footer() {
             <div className="main_controls_section">
                 <div className="main_controls_button" onClick={toggleAudio}>
                 {isLocalAudioEnabled ? (
-                <><FontAwesomeIcon icon={faMicrophoneSlash} size="lg" /><span className="button_name">Mute</span></>
+                <><FontAwesomeIcon icon={faMicrophone} size="lg" /><span className="button_name">Mute</span></>
                 
                 ): (
-                <><FontAwesomeIcon icon={faMicrophone} size="lg" /><span className="button_name">Unmute</span></>
-                )}
-               
-               
+                <><FontAwesomeIcon icon={faMicrophoneSlash} size="lg" /><span className="button_name">Unmute</span></>
+                )} 
                 </div>
 
                 <div className="main_controls_button" onClick={toggleVideo}>
                 {isLocalVideoEnabled ? (
-                <><FontAwesomeIcon icon={faVideoSlash} size="lg" /><span className="button_name">Stop Video</span></>
+                <><FontAwesomeIcon icon={faVideo} size="lg" /><span className="button_name">Stop Video</span></>
                 ): (
-                <><FontAwesomeIcon icon={faVideo} size="lg" /><span className="button_name">Start Video</span></>
-                )}
+                <><FontAwesomeIcon icon={faVideoSlash} size="lg" /><span className="button_name">Start Video</span></>
+                )} 
                 </div>
 
             </div>
